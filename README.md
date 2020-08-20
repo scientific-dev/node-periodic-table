@@ -4,8 +4,6 @@ It will give you the data of a chemical element by name, symbol or number!
 
 > **To Note:** Me and my team created the package. But the JSON Data of chemical elements which is took from an open source code by [https://github.com/Bowserinator](https://github.com/Bowserinator). We just made it available it as in NPM Package
 
-**NPM:** [https://www.npmjs.com/package/node-periodic-table](https://www.npmjs.com/package/node-periodic-table)
-
 # Quick Example
 ```js 
 const npt = require('node-periodic-table')
@@ -21,6 +19,12 @@ npt.getByNumber(1)
 
 // By chemical symbol of an element
 npt.getBySymbol('H')
+
+// By query
+npt.getByQuery('Hydro')
+
+// Get Version
+npt.version
 ```
 
 # Output
