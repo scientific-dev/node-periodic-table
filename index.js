@@ -29,7 +29,21 @@ function getByNumber (num) {
   return elements[parseInt(num)-1]
 }
 
+function getByQuery (query){
+  if(!query) throw new Error('No Query given to search for data')
+  var data;
+  for (var i = 0; i < elements.length; i++){
+    if(elements[i].name.toLowerCase().startsWith(query.toLowerCase())){
+      var data = elements[parseInt(elements[i].number)-1]
+    }
+  }
+  if(!data) throw new Error(`Could not search Query ${data} in our dat!`)
+  else return data
+}
+
 // 3. Export Everything
 module.exports.getByName = getByName;
 module.exports.getByNumber = getByNumber;
-module.exports.getBySymbol = getBySymbol
+module.exports.getBySymbol = getBySymbol;
+module.exports.getByQuery = getByQuery;
+module.exports.version = require('./package.json').version
